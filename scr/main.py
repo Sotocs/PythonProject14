@@ -1,3 +1,6 @@
+import json
+
+
 class Product:
     name: str
     description: str
@@ -28,6 +31,10 @@ class Category:
 
 
 if __name__ == "__main__":
+    # def load_json(filename):
+    #     with open(filename, 'r', encoding='utf8') as json_file:
+    #         return json.load(json_file)
+
     product1 = Product(
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
     )
