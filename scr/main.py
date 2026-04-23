@@ -1,40 +1,11 @@
 import json
-
-
-class Product:
-    name: str
-    description: str
-    price: float
-    quantity: int
-
-    def __init__(self, name, description, price, quantity):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.quantity = quantity
-
-
-class Category:
-    name: str
-    description: str
-    products: list[Product]
-    category_count = 0
-    product_count = 0
-
-    def __init__(self, name, description, products):
-        self.name = name
-        self.description = description
-        self.products = products
-
-        Category.category_count += 1
-        Category.product_count += len(products)
-
+from product import Product
+from category import Category
 
 if __name__ == "__main__":
     # def load_json(filename):
     #     with open(filename, 'r', encoding='utf8') as json_file:
     #         return json.load(json_file)
-
     product1 = Product(
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
     )
