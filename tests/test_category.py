@@ -32,8 +32,7 @@ def test_category1(product1, product2, product3):
         category1.description
         == "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
     )
-    assert len(category1.products) == 3
-    assert category1.products == [product1, product2, product3]
+    assert category1.len_products == 3
     assert category1.category_count == 1
     assert category1.product_count == 3
 
@@ -54,5 +53,4 @@ def test_category2(product4):
         category2.description
         == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
     )
-    assert len(category2.products) == 1
-    assert category2.products == [product4]
+    assert category2.len_products == 1

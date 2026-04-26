@@ -1,7 +1,6 @@
 import pytest
 
 from scr.product import Product
-from scr.category import Category
 
 
 @pytest.fixture()
@@ -35,9 +34,13 @@ def test_product(product1, product2, product3):
 
 @pytest.fixture()
 def product4():
-    return Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
+    return Product.new_product({'name':'55" QLED 4K', 'description':"Фоновая подсветка", 'price':123000.0, 'quantity':7})
 
 
-# def test_count(product4):
-#     assert Category.category_count == 2
-#     assert Category.product_count == 0
+def test_product2(product4):
+    assert product4.name == '55" QLED 4K'
+    assert product4.price == 123000.0
+    assert product4.quantity == 7
+    assert product4.description == "Фоновая подсветка"
+    product4.price = 180000.0
+    assert product4.price == 180000.0
