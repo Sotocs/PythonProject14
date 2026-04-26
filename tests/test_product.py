@@ -34,7 +34,14 @@ def test_product(product1, product2, product3):
 
 @pytest.fixture()
 def product4():
-    return Product.new_product({'name':'55" QLED 4K', 'description':"Фоновая подсветка", 'price':123000.0, 'quantity':7})
+    return Product.new_product(
+        {
+            "name": '55" QLED 4K',
+            "description": "Фоновая подсветка",
+            "price": 123000.0,
+            "quantity": 7,
+        }
+    )
 
 
 def test_product2(product4):
