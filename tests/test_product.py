@@ -30,6 +30,8 @@ def test_product(product1, product2, product3):
     assert product1.quantity == 5
     assert product2.quantity == 8
     assert product3.quantity == 14
+    assert str(product1) == 'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.'
+    assert product1 + product2 == 2580000
 
 
 @pytest.fixture()

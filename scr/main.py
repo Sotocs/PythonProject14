@@ -19,6 +19,9 @@ if __name__ == "__main__":
     category1.add_product(product4)
     print(category1.products)
     print(category1.product_count)
+    # print(product1 + product2)
+    # print()
+
 
     new_product = Product.new_product(
         {
