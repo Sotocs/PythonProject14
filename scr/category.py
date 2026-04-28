@@ -1,6 +1,3 @@
-
-
-
 class Category:
     category_count = 0
     product_count = 0
@@ -15,7 +12,9 @@ class Category:
     @property
     def products(self):
         for each_product in self.__products:
-            print(f'{each_product.name}, {each_product.price} руб. Остаток: {each_product.quantity} шт.')
+            print(
+                f"{each_product.name}, {each_product.price} руб. Остаток: {each_product.quantity} шт."
+            )
 
     @property
     def len_products(self):
@@ -23,5 +22,3 @@ class Category:
 
     def add_product(self, product):
         self.__products.append(product)
-
-

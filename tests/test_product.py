@@ -34,7 +34,14 @@ def test_product(product1, product2, product3):
 
 @pytest.fixture()
 def product4():
-    return Product.new_product({'name':'55" QLED 4K', 'description':"Фоновая подсветка", 'price':123000.0, 'quantity':7})
+    return Product.new_product(
+        {
+            "name": '55" QLED 4K',
+            "description": "Фоновая подсветка",
+            "price": 123000.0,
+            "quantity": 7,
+        }
+    )
 
 
 def test_product2(product4):
@@ -44,3 +51,35 @@ def test_product2(product4):
     assert product4.description == "Фоновая подсветка"
     product4.price = 180000.0
     assert product4.price == 180000.0
+
+def test_price_increase(product1):
+    product1.price = 200000.0
+    assert product1.price == 200000.0
+
+def test_price_decrease_reject(product1, monkeypatch):
+    monkeypatch.setattr("builtins.input", lambda: "n")
+
+    old_price = product1.price
+    product1.price = 100000.0
+
+    assert product1.price == old_price
+
+def test_price_zero(product1, capsys):
+    old_price = product1.price
+
+    product1.price = 0
+
+    captured = capsys.readouterr()
+    assert "не должна быть" in captured.out
+    assert product1.price == old_price
+
+
+def test_price_negative(product1, capsys):
+    old_price = product1.price
+
+    product1.price = -100
+
+    captured = capsys.readouterr()
+    assert "не должна быть" in captured.out
+    assert product1.price == old_price
+
