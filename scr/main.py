@@ -1,5 +1,5 @@
-from scr.product import Product
 from scr.category import Category
+from scr.product import Product
 
 if __name__ == "__main__":
     product1 = Product(
