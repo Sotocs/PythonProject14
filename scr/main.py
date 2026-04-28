@@ -22,7 +22,6 @@ if __name__ == "__main__":
     # print(product1 + product2)
     # print()
 
-
     new_product = Product.new_product(
         {
             "name": "Samsung Galaxy S23 Ultra",
