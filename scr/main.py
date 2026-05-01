@@ -1,5 +1,5 @@
-from scr.product import Product
 from scr.category import Category
+from scr.product import Product
 
 if __name__ == "__main__":
     product1 = Product(
@@ -19,6 +19,8 @@ if __name__ == "__main__":
     category1.add_product(product4)
     print(category1.products)
     print(category1.product_count)
+    # print(product1 + product2)
+    # print()
 
     new_product = Product.new_product(
         {

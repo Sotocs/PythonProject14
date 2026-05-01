@@ -11,10 +11,12 @@ class Category:
 
     @property
     def products(self):
-        for each_product in self.__products:
-            print(
-                f"{each_product.name}, {each_product.price} руб. Остаток: {each_product.quantity} шт."
-            )
+        for product in self.__products:
+            print(product)
+
+    def __str__(self):
+        total_quantity = sum(p.quantity for p in self.__products)
+        return f"{self.name}, количество продуктов: {total_quantity} шт."
 
     @property
     def len_products(self):
