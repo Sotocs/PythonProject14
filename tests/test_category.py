@@ -47,6 +47,9 @@ def test_category1(product1, product2, product3):
     assert Category.category_count == 1
     assert Category.product_count == 3
 
+    with pytest.raises(TypeError):
+        category1.add_product("Not a Product")
+
 
 def test_category2(product4):
     category2 = Category(
