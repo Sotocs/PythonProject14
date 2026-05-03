@@ -1,7 +1,7 @@
 import pytest
 
-from scr.category import Category
-from scr.product import Product
+from src.category import Category
+from src.product import Product
 
 
 @pytest.fixture(autouse=True)

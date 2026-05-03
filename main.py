@@ -1,5 +1,5 @@
-from scr.category import Category
-from scr.product import LawnGrass, Smartphone
+from src.category import Category
+from src.product import LawnGrass, Smartphone
 
 if __name__ == "__main__":
     smartphone1 = Smartphone(

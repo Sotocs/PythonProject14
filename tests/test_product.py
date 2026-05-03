@@ -1,6 +1,6 @@
 import pytest
 
-from scr.product import LawnGrass, Product, Smartphone
+from src.product import LawnGrass, Product, Smartphone
 
 
 @pytest.fixture()
