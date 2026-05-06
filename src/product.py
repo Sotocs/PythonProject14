@@ -1,10 +1,29 @@
-class Product:
+from abc import ABC, abstractmethod
+
+
+class BaseProduct(ABC):
+    @abstractmethod
+    def new_product(cls, product_dict):
+        pass
+
+    @abstractmethod
+    def price(self):
+        pass
+
+class MixinLog:
+    #Product('Продукт1', 'Описание продукта', 1200, 10)
+
+    def __repr__(self):
+        print(f"{self.__class__.__name__}('{self.name}', '{self.description}', {self.price}, {self.quantity})")
+
+class Product(MixinLog, BaseProduct):
 
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__repr__()
 
     @classmethod
     def new_product(cls, product_dict):
@@ -45,7 +64,7 @@ class Product:
 
 class Smartphone(Product):
     def __init__(
-        self, name, description, price, quantity, efficiency, model, memory, color
+            self, name, description, price, quantity, efficiency, model, memory, color
     ):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -56,7 +75,7 @@ class Smartphone(Product):
 
 class LawnGrass(Product):
     def __init__(
-        self, name, description, price, quantity, country, germination_period, color
+            self, name, description, price, quantity, country, germination_period, color
     ):
         super().__init__(name, description, price, quantity)
         self.country = country
