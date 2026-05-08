@@ -8,14 +8,16 @@ class Category:
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.__products = products
+        self.__products = products if products else []
         Category.category_count += 1
         Category.product_count += len(products)
 
     @property
     def products(self):
+        result = ""
         for product in self.__products:
-            print(product)
+            result += f"{product}\n"
+        return result
 
     def __str__(self):
         total_quantity = sum(p.quantity for p in self.__products)

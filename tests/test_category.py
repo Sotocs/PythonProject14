@@ -83,14 +83,17 @@ def test_add_product_updates_list(product1):
     assert category._Category__products[0] == product1
 
 
-def test_products_output(product1, capsys):
-    category = Category("Test", "Desc", [product1])
+def test_products_property():
+    product1 = Product("Samsung", "Описание", 100000, 5)
+    product2 = Product("Iphone", "Описание", 150000, 3)
 
-    category.products  # вызываем property
+    category = Category("Смартфоны", "Телефоны", [product1, product2])
 
-    captured = capsys.readouterr()
-    assert product1.name in captured.out
-    assert "руб." in captured.out
+    expected = (
+        "Samsung, 100000 руб. Остаток: 5 шт.\n" "Iphone, 150000 руб. Остаток: 3 шт.\n"
+    )
+
+    assert category.products == expected
 
 
 def test_len_products_empty():

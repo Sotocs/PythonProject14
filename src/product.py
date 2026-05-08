@@ -10,11 +10,15 @@ class BaseProduct(ABC):
     def price(self):
         pass
 
+
 class MixinLog:
-    #Product('Продукт1', 'Описание продукта', 1200, 10)
+    # Product('Продукт1', 'Описание продукта', 1200, 10)
 
     def __repr__(self):
-        print(f"{self.__class__.__name__}('{self.name}', '{self.description}', {self.price}, {self.quantity})")
+        print(
+            f"{self.__class__.__name__}('{self.name}', '{self.description}', {self.price}, {self.quantity})"
+        )
+
 
 class Product(MixinLog, BaseProduct):
 
@@ -64,7 +68,7 @@ class Product(MixinLog, BaseProduct):
 
 class Smartphone(Product):
     def __init__(
-            self, name, description, price, quantity, efficiency, model, memory, color
+        self, name, description, price, quantity, efficiency, model, memory, color
     ):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -75,7 +79,7 @@ class Smartphone(Product):
 
 class LawnGrass(Product):
     def __init__(
-            self, name, description, price, quantity, country, germination_period, color
+        self, name, description, price, quantity, country, germination_period, color
     ):
         super().__init__(name, description, price, quantity)
         self.country = country

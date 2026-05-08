@@ -10,14 +10,11 @@ def test_base_product_cannot_be_instantiated():
         BaseProduct()
 
 
-
-
 @pytest.fixture()
 def product1():
     return Product(
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
     )
-
 
 
 @pytest.fixture()
