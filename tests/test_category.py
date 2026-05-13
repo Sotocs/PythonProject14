@@ -83,6 +83,11 @@ def test_add_product_updates_list(product1):
     assert category._Category__products[0] == product1
 
 
+def test_middle_price(product1, product2, product3):
+    category = Category("Test", "Desc", [product1, product2, product3])
+    assert category.middle_price == 140333, 33
+
+
 def test_products_property():
     product1 = Product("Samsung", "Описание", 100000, 5)
     product2 = Product("Iphone", "Описание", 150000, 3)
