@@ -85,7 +85,7 @@ def test_add_product_updates_list(product1):
 
 def test_middle_price(product1, product2, product3):
     category = Category("Test", "Desc", [product1, product2, product3])
-    assert category.middle_price == 140333, 33
+    assert category.middle_price() == 140333.33
 
 
 def test_products_property():
