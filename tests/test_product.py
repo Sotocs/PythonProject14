@@ -41,6 +41,11 @@ def test_product(product1, product2, product3):
     assert product1 + product2 == 2580000
 
 
+def test_zero_quantity():
+    with pytest.raises(ValueError):
+        Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 0)
+
+
 @pytest.fixture()
 def product4():
     return Product.new_product(
